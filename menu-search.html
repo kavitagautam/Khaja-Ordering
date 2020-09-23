@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    
+      <!-- Latest compiled and minified CSS -->
+
+<link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--CSS Reset-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+    <!--Bootstrap CSS-->
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    
+    <!--jQuery-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    
+    <!--Bootstrap JS-->
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+    <!--CSS for List/Grid View Switcher-->
+    <link rel="stylesheet" href="assets/css/style_view.css">
+    
+    <!--jQuery for List/Grid View Switcher-->
+    <script  src="assets/js/index_view.js"></script>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+ <!-- Also include jQueryUI -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!--fontawasome-->
+<script src="https://kit.fontawesome.com/2d4e532760.js"></script>
+
+</head>
+</body>
+
+<!---
+<section class="banner-wrapper">
+
+    <div class="container">
+        <div class="bg-img-container">
+            <img class="crop" src="assets/images/banner.png" alt="assets/images/banner.jpg">
+        </div>
+    </div>
+
+    <div class="container">
+       <div class="search_fun_wrapper">
+        <script>
+
+            $(function() {
+              $("#search").on("keyup", function() {
+                $(".search-menu").html("");
+                var val = $.trim(this.value);
+                if (val) {
+                  val = val.toLowerCase();
+                  $.each(menuArray, function(_,obj) {
+                   // console.log(val,obj.name.toLowerCase().indexOf(val),obj)
+                    if (obj.name.toLowerCase().indexOf(val) != -1) {
+                      $(".search-menu").append('<a href="'+obj.link+'" class="sort-items"><img class="item-img-container crop" src="'+obj.image+'"/><div class="food-details><small class="item-name">'+obj.name+'</small>  <h5 class="price"><span>'+obj.price+'</span></h5></div></a>');           
+                       }
+                  });
+                }
+                $(".not-found").toggle($(".search-menu").find("img").length==0);
+              });
+            });
+        
+            
+            
+            var menuArray =
+            [
+                {
+                    link:"menu-single.html",
+                    name:"Chicken-momo",
+                    price:"Rs.100",
+                    image: "assets/images/chicken-momo.png?t=" + Math.random()
+                },
+                {
+                    link:"menu-single.html",
+                    name:"Mutton Sekuwa",
+                    price:"Rs.100",
+                    image: "assets/images/mutton-sekuwa.png?t=" + Math.random()
+                },
+                {
+                    link:"menu-single.html",
+                    name:"Chicken-Meatball",
+                    price:"Rs.100",
+                    image: "assets/images/chicken-chowmin.png?t=" + Math.random()
+                },
+                {
+                    link:"menu-single.html",
+                    name:"Newari Set",
+                    price:"Rs.100",
+                    image: "assets/images/newari-set.png?t=" + Math.random()
+                },
+                {
+                    link:"restro-single.html",
+                    name:"Himalaya Nepalese Cuisine",
+                    image: "assets/images/himalaya.png?t=" + Math.random()
+                },
+                {
+                    link:"restro-single.html",
+                    name:"Daalvhat Restaurant",
+                    image: "assets/images/chicken-momo.png?t=" + Math.random()
+                },
+                {
+                    link:"restro-single.html",
+                    name:"Everest Himalayan Restaurant",
+                    image: "assets/images/everest.png?t=" + Math.random()
+                },
+                {
+                    link:"restro-single.html",
+                    name:"PetPuja Retaurant and Bar",
+                    image: "assets/images/petpuja.png?t=" + Math.random()
+                },
+              
+            ]
+              
+        </script>
+        <div class="search-form">
+            <h2 class="head2">No more craving for hunger,<span class="o-head">search,order it!</span></h2>
+            <form action="">
+                <input id="search" class="input-box" type="text" name="search" placeholder="Search food and restaurants">
+                
+                    <button class="search button-container">
+                        <span><i class="fas fa-search"></i>Search</span>
+                    </button>
+            </form>
+        </div>
+        
+        <div class="container">
+            <div class="search-menu"></div>
+        </div>
+       </div>
+    </div>
+</section>
+
+
+
+
+
+<section class="view-wrapper">
+
+    <div class="container">
+      <div class="well well-sm">
+          <strong>Display</strong>
+          <div class="btn-group">
+              <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+              </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th"></span>Grid</a>
+          </div>
+      </div>
+      <div id="products" class="row list-group">
+          <div class="item  col-xs-4 col-lg-4 grid-group-item list-group-item">
+              <div class="thumbnail">
+                  <img class="group list-group-image" src="https://source.unsplash.com/400x250/?mobile" alt="">
+                  <div class="caption">
+                      <h4 class="group inner list-group-item-heading">
+                          Product title</h4>
+                      <p class="group inner list-group-item-text">
+                          Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                          sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                      <div class="row">
+                          <div class="col-xs-12 col-md-6">
+                              <p class="lead">
+                                  $21.000</p>
+                          </div>
+                          <div class="col-xs-12 col-md-6">
+                              <a class="btn btn-success" href="#1">Add to cart</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="item  col-xs-4 col-lg-4 grid-group-item list-group-item">
+              <div class="thumbnail">
+                  <img class="group list-group-image" src="https://source.unsplash.com/400x250/?watch" alt="">
+                  <div class="caption">
+                      <h4 class="group inner list-group-item-heading">
+                          Codehim.com</h4>
+                      <p class="group inner list-group-item-text">
+                          Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                          sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                      <div class="row">
+                          <div class="col-xs-12 col-md-6">
+                              <p class="lead">
+                                  $21.000</p>
+                          </div>
+                          <div class="col-xs-12 col-md-6">
+                              <a class="btn btn-success" href="#2">Add to cart</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="item  col-xs-4 col-lg-4 grid-group-item list-group-item">
+              <div class="thumbnail">
+                  <img class="group list-group-image" src="https://source.unsplash.com/400x250/?t-shirt" alt="">
+                  <div class="caption">
+                      <h4 class="group inner list-group-item-heading">
+                          Product title</h4>
+                      <p class="group inner list-group-item-text">
+                          Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                          sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                      <div class="row">
+                          <div class="col-xs-12 col-md-6">
+                              <p class="lead">
+                                  $21.000</p>
+                          </div>
+                          <div class="col-xs-12 col-md-6">
+                              <a class="btn btn-success" href="#3">Add to cart</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="item  col-xs-4 col-lg-4 grid-group-item list-group-item">
+              <div class="thumbnail">
+                  <img class="group list-group-image" src="https://source.unsplash.com/400x250/?laptop" alt="">
+                  <div class="caption">
+                      <h4 class="group inner list-group-item-heading">
+                          Product title</h4>
+                      <p class="group inner list-group-item-text">
+                          Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                          sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                      <div class="row">
+                          <div class="col-xs-12 col-md-6">
+                              <p class="lead">
+                                  $311.000</p>
+                          </div>
+                          <div class="col-xs-12 col-md-6">
+                              <a class="btn btn-success" href="#4">Add to cart</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="item  col-xs-4 col-lg-4 grid-group-item list-group-item">
+              <div class="thumbnail">
+                  <img class="group list-group-image" src="https://source.unsplash.com/400x250/?girl" alt="">
+                  <div class="caption">
+                      <h4 class="group inner list-group-item-heading">
+                          Product title</h4>
+                      <p class="group inner list-group-item-text">
+                          Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                          sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                      <div class="row">
+                          <div class="col-xs-12 col-md-6">
+                              <p class="lead">
+                                  $5.000</p>
+                          </div>
+                          <div class="col-xs-12 col-md-6">
+                              <a class="btn btn-success" href="#5">Add to cart</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="item  col-xs-4 col-lg-4 grid-group-item list-group-item">
+              <div class="thumbnail">
+                  <img class="group list-group-image" src="https://source.unsplash.com/400x250/?keyboard" alt="">
+                  <div class="caption">
+                      <h4 class="group inner list-group-item-heading">
+                          Product title</h4>
+                      <p class="group inner list-group-item-text">
+                          Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                          sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                      <div class="row">
+                          <div class="col-xs-12 col-md-6">
+                              <p class="lead">
+                                  $10.000</p>
+                          </div>
+                          <div class="col-xs-12 col-md-6">
+                              <a class="btn btn-success" href="#6">Add to cart</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  
+</section>-->
+
+
+<section class="filter-wrapper">
+    <h2>Sort News</h2>
+<select name="sort-news" id="sort-news">
+	<option value="All">All news</option>
+	<option value="Cat1">Category 1</option>
+	<option value="Cat2">Category 2</option>
+	<option value="Cat3">Category 3</option>
+</select> 
+<hr />
+<section class="news-list">
+  
+  <article class="news-item" data-category="Cat1">
+	<div class="thumb">
+		<img alt="Our ALT text here" title="Our title here" src="http://placehold.it/150x150">
+	</div>
+	<div class="news-txt">
+		<h3><a href="">A news title</a></h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+	</div>
+</article>
+
+<article class="news-item" data-category="Cat2">
+	<div class="thumb">
+		<img alt="Our ALT text here" title="Our title here" src="http://placehold.it/150x150">
+	</div>
+	<div class="news-txt">
+		<h3><a href="">A news title</a></h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+	</div>
+</article>
+
+<article class="news-item" data-category="Cat3">
+	<div class="thumb">
+		<img alt="Our ALT text here" title="Our title here" src="http://placehold.it/150x150">
+	</div>
+	<div class="news-txt">
+		<h3><a href="">A news title</a></h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+	</div>
+    </article>
+    <article class="news-item" data-category="Cat2">
+      <div class="thumb">
+        <img alt="Our ALT text here" title="Our title here" src="http://placehold.it/150x150">
+      </div>
+      <div class="news-txt">
+        <h3><a href="">A news title</a></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+      </div>
+    </article>
+    <article class="news-item" data-category="Cat2">
+      <div class="thumb">
+        <img alt="Our ALT text here" title="Our title here" src="http://placehold.it/150x150">
+      </div>
+      <div class="news-txt">
+        <h3><a href="">A news title</a></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+      </div>
+    </article>
+
+  </section>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-12/jquery-2.0.3.min_1.js"></script>
+  <script>
+    //Filter News
+$('select#sort-news').change(function() {
+	var filter = $(this).val()
+	filterList(filter);
+});
+
+//News filter function
+function filterList(value) {
+	var list = $(".news-list .news-item");
+	$(list).fadeOut("fast");
+	if (value == "All") {
+		$(".news-list").find("article").each(function (i) {
+			$(this).delay(200).slideDown("fast");
+		});
+	} else {
+		//Notice this *=" <- This means that if the data-category contains multiple options, it will find them
+		//Ex: data-category="Cat1, Cat2"
+		$(".news-list").find("article[data-category*=" + value + "]").each(function (i) {
+			$(this).delay(200).slideDown("fast");
+		});
+	}
+}
+  </script>
+</section>
+
+</body>
+</html>
+
+
+

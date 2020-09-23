@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+      <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+ <!-- Also include jQueryUI -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!--fontawasome-->
+<script src="https://kit.fontawesome.com/2d4e532760.js"></script>
+<script>
+        function openMenu()
+        {
+           document.getElementById('navLinks').style.left="0px";
+        }
+        
+        function closeMenu()
+        {
+           document.getElementById('navLinks').style.left = "-300px";
+        }
+    </script>
+</head>
+<body>
+
+    <header class="header-wrapper">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-2 col-7">
+                    <a href="index.html" class="logo-container">
+                        <img src="assets/images/logo.png" alt="assets/images/logo.png">
+                    </a>
+                </div>
+    
+                <div class="col-lg-7 col-2">
+                    <div class="nav-wrapper">
+                        <nav class="navbar navbar-expand-sm">
+                            <button onclick="openMenu()" class="menu-icon"><i class="fas fa-bars" aria-hidden="true"></i></button>
+                            <ul class="navbar-nav menu-items" id="navLinks">
+                                <li><button onclick="closeMenu()" class="cross-icon"><i class="fas fa-times" aria-hidden="true"></i></button></li>
+                              <li class="nav-item active-menu">
+                                <a class="nav-link" href="index.html">Home</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="menu.html">Menu</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="restaurant.html">Restaurants</a>
+                              </li>
+                            </ul>
+                          
+                          </nav>
+                    </div>
+                </div>
+                
+
+                <div class="col-lg-3 col-3">
+                   <div class="logs">
+                    <a href="register.html"><button class="sign button-container">
+                        <span><i class="fas fa-lock"></i></span>
+                    </button></a>
+                    <a href="login.html">
+                        <button class="sm-profile menus">
+                            <img class="crop" src="assets/images/profile-pic.png" alt="assets/images/profile-pic.png"> 
+                            <ul class="sub-menus text-left">
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">My Orders</a></li>
+                                <li><a href="#">Logout</a></li>
+                            </ul>
+                        </button>
+                    </a>
+                   </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <section class="banner-wrapper">
+
+        <div class="container">
+            <div class="bg-img-container">
+                <img class="crop" src="assets/images/banner.png" alt="assets/images/banner.jpg">
+            </div>
+        </div>
+
+        <div class="container">
+           <div class="search_fun_wrapper">
+            <script>
+
+                $(function() {
+                  $("#search").on("keyup", function() {
+                    $(".search-menu").html("");
+                    var val = $.trim(this.value);
+                    if (val) {
+                      val = val.toLowerCase();
+                      $.each(menuArray, function(_,obj) {
+                       // console.log(val,obj.name.toLowerCase().indexOf(val),obj)
+                        if (obj.name.toLowerCase().indexOf(val) != -1) {
+                          $(".search-menu").append('<a href="'+obj.link+'" class="sort-items"><img class="item-img-container crop" src="'+obj.image+'"/><div class="food-details><small class="item-name">'+obj.name+'</small>  <h5 class="price"><span>'+obj.price+'</span></h5></div></a>');           
+                           }
+                      });
+                    }
+                    $(".not-found").toggle($(".search-menu").find("img").length==0);
+                  });
+                });
+            
+                
+                
+                var menuArray =
+                [
+                    {
+                        link:"menu-single.html",
+                        name:"Chicken-momo",
+                        price:"Rs.100",
+                        image: "assets/images/chicken-momo.png?t=" + Math.random()
+                    },
+                    {
+                        link:"menu-single.html",
+                        name:"Mutton Sekuwa",
+                        price:"Rs.100",
+                        image: "assets/images/mutton-sekuwa.png?t=" + Math.random()
+                    },
+                    {
+                        link:"menu-single.html",
+                        name:"Chicken-Meatball",
+                        price:"Rs.100",
+                        image: "assets/images/chicken-chowmin.png?t=" + Math.random()
+                    },
+                    {
+                        link:"menu-single.html",
+                        name:"Newari Set",
+                        price:"Rs.100",
+                        image: "assets/images/newari-set.png?t=" + Math.random()
+                    },
+                    {
+                        link:"restro-single.html",
+                        name:"Himalaya Nepalese Cuisine",
+                        image: "assets/images/himalaya.png?t=" + Math.random()
+                    },
+                    {
+                        link:"restro-single.html",
+                        name:"Daalvhat Restaurant",
+                        image: "assets/images/chicken-momo.png?t=" + Math.random()
+                    },
+                    {
+                        link:"restro-single.html",
+                        name:"Everest Himalayan Restaurant",
+                        image: "assets/images/everest.png?t=" + Math.random()
+                    },
+                    {
+                        link:"restro-single.html",
+                        name:"PetPuja Retaurant and Bar",
+                        image: "assets/images/petpuja.png?t=" + Math.random()
+                    },
+                  
+                ]
+                  
+            </script>
+            <div class="search-form">
+                <h2 class="head2">No more craving for hunger,<span class="o-head">search,order it!</span></h2>
+                <form action="">
+                    <input id="search" class="input-box" type="text" name="search" placeholder="Search food and restaurants">
+                    
+                        <button class="search button-container">
+                            <span><i class="fas fa-search"></i>Search</span>
+                        </button>
+                </form>
+            </div>
+            
+            <div class="container">
+                <div class="search-menu"></div>
+            </div>
+           </div>
+        </div>
+    </section>
+
+
+    <section class="quick_grab_wrapper">
+        <div class="container">
+            <b>Quick Grabs:</b>
+            <div class="row">
+
+                <div class="col-lg-2 col-sm-4 col-6">
+                    <div class="food-img-container img-container">
+                        <img class="crop" src="assets/images/pizza.png" alt="assets/images/pizza.png">
+                        <small class="food-name">Pizza</small>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-sm-4 col-6">
+                    <div class="food-img-container img-container">
+                        <img class="crop" src="assets/images/burger.png" alt="assets/images/burger.png">
+                        <small class="food-name">Burger</small>
+                    </div>
+                </div>
+
+                
+                <div class="col-lg-2 col-sm-4 col-6">
+                    <div class="food-img-container img-container">
+                        <img class="crop" src="assets/images/momo.png" alt="assets/images/momo.png">
+                        <small class="food-name">Momo</small>
+                    </div>
+                </div>
+
+                
+                <div class="col-lg-2 col-sm-4 col-6">
+                    <div class="food-img-container img-container">
+                        <img class="crop" src="assets/images/pasta.png" alt="assets/images/pasta.png">
+                        <small class="food-name">Pasta</small>
+                    </div>
+                </div>
+
+                
+                <div class="col-lg-2 col-sm-4 col-6">
+                    <div class="food-img-container img-container">
+                        <img class="crop" src="assets/images/bakery.png" alt="assets/images/bakery.png">
+                        <small class="food-name">Bakery</small>
+                    </div>
+                </div>
+
+                
+                <div class="col-lg-2 col-sm-4 col-6">
+                    <div class="food-img-container img-container">
+                        <img class="crop" src="assets/images/dinner.png" alt="assets/images/dinner.png">
+                        <small class="food-name">Dinner</small>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="voucher-wrapper padding-top">
+        <div class="container">
+            <div class="voucher-img-container img-container">
+                <img class="crop" src="assets/images/voucher.png" alt="assets/images/voucher.png">
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="delicious-items-wrapper padding-top">
+        <div class="container">
+            <h3 class="title">Local and Delicious</h3>
+
+                <div id="foods" class="owl-carousel owl-theme">
+                    <div class="item">
+                        <a href="menu-single.html" class="food-overview">
+                            <div class="item-img-container img-container">
+                                <img class="crop" src="assets/images/chicken-momo.png" alt="assets/images/chicken-momo.png">
+                            </div>
+                            <div class="food-details">
+                                <small class="item-name">Chicken Mo:Mo<i class="fas fa-heart"></i></small>
+                                <h5 class="price">Nrs.<span>100</span></h5>
+                                <button class="addcart button-container"> 
+                                    <span>Add to Cart</span><i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <div class="food-overview">
+                            <div class="item-img-container img-container">
+                                <img class="crop" src="assets/images/mutton-sekuwa.png" alt="assets/images/chicken-momo.png">
+                            </div>
+                            <div class="food-details">
+                                <small class="item-name heart">Mutton Sekuwa<i class="fas fa-heart"></i></small>
+                                <h5 class="price">Nrs.<span>120</span><strike>150</strike></h5>
+                                <button class="addcart button-container"> 
+                                    <span>Add to Cart</span><i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="food-overview">
+                            <div class="item-img-container img-container">
+                                <img class="crop" src="assets/images/chicken-chowmin.png" alt="assets/images/chicken-momo.png">
+                            </div>
+                            <div class="food-details">
+                                <small class="item-name heart">Chowmein Meatball<i class="fas fa-heart"></i></small>
+                                <h5 class="price">Nrs.<span>120</span><strike>150</strike></h5>
+                                <button class="addcart button-container"> 
+                                    <span>Add to Cart</span><i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="food-overview">
+                            <div class="item-img-container img-container">
+                                <img class="crop" src="assets/images/newari-set.png" alt="assets/images/chicken-momo.png">
+                            </div>
+                            <div class="food-details">
+                                <small class="item-name heart">Newari Set<i class="fas fa-heart"></i></small>
+                                <h5 class="price">Nrs.<span>120</span><strike>150</strike></h5>
+                                <button class="addcart button-container"> 
+                                    <span>Add to Cart</span><i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="food-overview">
+                            <div class="item-img-container img-container">
+                                <img class="crop" src="assets/images/chicken-momo.png" alt="assets/images/chicken-momo.png">
+                            </div>
+                            <div class="food-details">
+                                <small class="item-name">Chicken Mo:Mo<i class="fas fa-heart"></i></small>
+                                <h5 class="price">Nrs.<span>100</span></h5>
+                                <button class="addcart button-container"> 
+                                    <span>Add to Cart</span><i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="food-overview">
+                            <div class="item-img-container img-container">
+                                <img class="crop" src="assets/images/mutton-sekuwa.png" alt="assets/images/chicken-momo.png">
+                            </div>
+                            <div class="food-details">
+                                <small class="item-name">Mutton Sekuwa<i class="fas fa-heart"></i></small>
+                                <h5 class="price">Nrs.<span>100</span></h5>
+                                <button class="addcart button-container"> 
+                                    <span>Add to Cart</span><i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="restaurant-order-wrapper padding-top">
+        <div class="container">
+            <h3 class="title">Order from Restaurants</h3>
+        </div>
+       <div class="order-wrap">
+        <div class="flavour-wrap">
+            <div class="container">
+               <div class="row">
+                <div class="col-lg-7 col-sm-6">
+                    <div class="flavour-details">
+                        <h2 class="wh-head">Discovering flavours just few clicks away!</h2>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-sm-6">
+                    <div class="flavour-images">
+                        <div class="flavour-img-container">
+                            <img class="crop" src="assets/images/center-flavour.png" alt="assets/images/center-flavour.png">
+                            <div class="flavour fl1">
+                                <img class="crop" src="assets/images/flavour-1.png" alt="assets/images/flavour-1.png">
+                            </div>
+    
+                            <div class="flavour fl2">
+                                <img class="crop" src="assets/images/flavour-2.png" alt="assets/images/flavour-1.png">
+                            </div>
+    
+                            <div class="flavour fl3">
+                                <img class="crop" src="assets/images/flavour-3.png" alt="assets/images/flavour-1.png">
+                            </div>
+    
+                            <div class="flavour fl4">
+                                <img class="crop" src="assets/images/flavour-4.png" alt="assets/images/flavour-1.png">
+                            </div>
+                            <div class="w-round flr1"></div>
+                            <div class="w-round flr2"></div>
+                            <div class="w-round flr3"></div>
+                            <div class="w-round flr4"></div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+               </div>
+            </div>
+        </div>
+
+        <div class="member-wrap">
+            <div class="container">
+                <small class="sm-title">New Members</small>
+                
+                <div id="members" class="owl-carousel owl-theme">
+                    <div class="item">
+                        <a href="restro-single.html" class="member-overview">
+                            <div class="item-img-container img-container">
+                                <img class="crop" src="assets/images/himalaya.png" alt="assets/images/chicken-momo.png">
+                                <div class="inner-img-container img-container">
+                                    <img class="crop" src="assets/images/himalaya-logo.png" alt="">
+                                </div>
+                            </div>
+                            <div class="food-details">
+                                <small class="item-name">Himalaya Nepalese Cuisine<i class="fas fa-heart"></i></small>
+                                <div class="types">
+                                    <span class="border-right">Thakali</span>
+                                    <span class="border-right">Himalayan</span>
+                                    <span class="border-right">Newari</span>
+                                    <span>Chinese</span>
+                                </div>
+
+                                <div class="location">
+                                    <i class="fas fa-map-marker-alt"></i><span>Chakrapath,Maharajgunj<small><i class="fas fa-star"></i></small></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <div class="member-overview">
+                            <div class="item-img-container img-container">
+                                <img class="crop" src="assets/images/chicken-momo.png" alt="assets/images/chicken-momo.png">
+                                <div class="inner-img-container img-container">
+                                    <img class="crop" src="assets/images/daalvhat-logo.png" alt="">
+                                </div>
+                            </div>
+                            <div class="food-details">
+                                <small class="item-name heart">Daal Vhat Nepali Kitchen<i class="fas fa-heart"></i></small>
+                                <div class="types">
+                                    <span class="border-right">Thakali</span>
+                                    <span class="border-right">Himalayan</span>
+                                    <span class="border-right">Newari</span>
+                                    <span>Chinese</span>
+                                </div>
+
+                                <div class="location">
+                                    <i class="fas fa-map-marker-alt"></i><span>Chakrapath,Maharajgunj<small><i class="fas fa-star"></i>4.5</small></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="member-overview">
+                            <div class="item-img-container img-container">
+                                <img class="crop" src="assets/images/everest.png" alt="assets/images/chicken-momo.png">
+                                <div class="inner-img-container img-container">
+                                    <img class="crop" src="assets/images/everest-logo.png" alt="">
+                                </div>
+                            </div>
+                            <div class="food-details">
+                                <small class="item-name heart">Everest Himalayan Restaurant<i class="fas fa-heart"></i></small>
+                                <div class="types">
+                                    <span class="border-right">Thakali</span>
+                                    <span class="border-right">Himalayan</span>
+                                    <span class="border-right">Newari</span>
+                                    <span>Chinese</span>
+                                </div>
+
+                                <div class="location">
+                                    <i class="fas fa-map-marker-alt"></i><span>Chakrapath,Maharajgunj<small><i class="fas fa-star"></i>4.5</small></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="member-overview">
+                            <div class="item-img-container img-container">
+                                <img class="crop" src="assets/images/petpuja.png" alt="assets/images/chicken-momo.png">
+                                <div class="inner-img-container img-container">
+                                    <img class="crop" src="assets/images/petpuja-logo.png" alt="">
+                                </div>
+                            </div>
+                            <div class="food-details">
+                                <small class="item-name">PetPooja Restaurant & Bar<i class="fas fa-heart"></i></small>
+                                <div class="types">
+                                    <span class="border-right">Thakali</span>
+                                    <span class="border-right">Himalayan</span>
+                                    <span class="border-right">Newari</span>
+                                    <span>Chinese</span>
+                                </div>
+
+                                <div class="location">
+                                    <i class="fas fa-map-marker-alt"></i><span>Chakrapath,Maharajgunj<small><i class="fas fa-star"></i>4.5</small></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="member-overview">
+                            <div class="item-img-container img-container">
+                                <img class="crop" src="assets/images/himalaya.png" alt="assets/images/chicken-momo.png">
+                                <div class="inner-img-container img-container">
+                                    <img class="crop" src="assets/images/himalaya-logo.png" alt="">
+                                </div>
+                            </div>
+                            <div class="food-details">
+                                <small class="item-name">Himalaya Nepalese Cuisine<i class="fas fa-heart"></i></small>
+                                <div class="types">
+                                    <span class="border-right">Thakali</span>
+                                    <span class="border-right">Himalayan</span>
+                                    <span class="border-right">Newari</span>
+                                    <span>Chinese</span>
+                                </div>
+
+                                <div class="location">
+                                    <i class="fas fa-map-marker-alt"></i><span>Chakrapath,Maharajgunj<small><i class="fas fa-star"></i></small></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div class="member-overview">
+                            <div class="item-img-container img-container">
+                                <img class="crop" src="assets/images/himalaya.png" alt="assets/images/chicken-momo.png">
+                                <div class="inner-img-container img-container">
+                                    <img class="crop" src="assets/images/himalaya-logo.png" alt="">
+                                </div>
+                            </div>
+                            <div class="food-details">
+                                <small class="item-name">Himalaya Nepalese Cuisine<i class="fas fa-heart"></i></small>
+                                <div class="types">
+                                    <span class="border-right">Thakali</span>
+                                    <span class="border-right">Himalayan</span>
+                                    <span class="border-right">Newari</span>
+                                    <span>Chinese</span>
+                                </div>
+
+                                <div class="location">
+                                    <i class="fas fa-map-marker-alt"></i><span>Chakrapath,Maharajgunj<small><i class="fas fa-star"></i></small></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+       </div>
+    </section>
+
+
+    <section class="order-track-wrapper padding-top">
+        <div class="container">
+            <h3 class="title">Track your Order</h3>
+            <div class="row flex-row-reverse">
+                <div class="col-lg-6 col-sm-6">
+                    <div class="tracker-img-container">
+                        <img class="crop" src="assets/images/order-tracker.png" alt="assets/images/order-tracker.png">
+                        <div class="o-round or1">
+                        </div>
+                        <div class="o-round or2">
+                        </div>
+                        <div class="o-round or3">
+                        </div>
+                        <div class="o-round or4">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-sm-6">
+                    <div class="track-form">
+                        <h4>You don't need account to check your order,although signing in makes 
+                            tracking easier.</h4>
+                            <form action="">
+                                <div class="o-form">
+                                    <div class="number form-group">
+                                        <label for="">Order Number:</label>
+                                        <input class="input-box" type="number" name="number">
+                                    </div>
+                                    <div class="email form-group">
+                                        <label for="">Order Email:</label>
+                                        <input class="input-box" type="email" name="email">
+                                    </div>
+                                </div>
+
+                                <button class="track button-container">
+                                    <span>Track Order</span>
+                                </button>
+
+                            </form>
+                    </div>
+                </div>
+               
+
+            </div>
+        </div>
+    </section>
+
+     
+
+    <section class="welcome-wrapper padding-top padding-bottom">
+        <div class="container">
+            <div class="welcome-wrap">
+                <h2 class="wh-head">Hungry?Don't be</h2>
+                <p class="sm-wh-text">Download our app and get the best food service</p>
+            </div>
+            <div class="app-images">
+                <img class="crop" src="assets/images/app-store.png" alt="assets/images/app-store.png">
+                <img class="crop" src="assets/images/google-play.png" alt="assets/images/google-play.png">
+            </div>
+
+            <div class="mobile-img-container">
+                <img class="crop" src="assets/images/mobile.png" alt="assets/images/mobile.png">
+                <div class="w-round mbr1"></div>
+                <div class="w-round mbr2"></div>
+                <div class="w-round mbr3"></div>
+                <div class="w-round mbr4"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-7">
+                    <div class="logo-container">
+                        <img src="assets/images/logo.png" alt="assets/images/logo.png">
+                        <span class="logo-name">KhajaOrder</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-5">
+                    <div class="medias">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>                   
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>   
+                    </div>
+                </div>
+            </div>
+
+            <div class="line">
+            </div>
+
+            <div class="foot-wrap">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="details">
+                            <p class="sm-para">Restaurant, or an eatery, is a business that prepares and serves food and drinks to customers.Meals are generally served and eaten on the premises, but many restaurants also offer take-out and food delivery services. Restaurants vary greatly in appearance and offerings</p>
+                            <b>Service Time:5A.M-12P.M</b>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                       <div class="quick-links">
+                        <h5>Quick Links</h5>
+                        <a class="active" href="menu.html">Menu</a>
+                        <a href="restaurant.html">Restaurants</a>
+                        <a href="#">Contact Us</a>
+                        <a href="about-us.html">About Us</a>
+                       </div>
+                    </div>
+                    <div class="col-lg-3">
+                      <div class="guide">
+                        <h5>Guide</h5>
+                        <a href="#">How to order?</a>
+                        <a href="#">How to get notified on offers?</a>
+                        <a href="#">Payment gateways</a>
+                        <a href="#">Payment gateways</a>
+                        <a href="#">Add Restaurant</a>
+                      </div>
+                    </div>
+                    <div class="col-lg-3">
+                       <div class="apps">
+                        <h5>Download app</h5>
+                        <img class="crop" src="assets/images/app-store.png" alt="">
+                        <img class="crop" src="assets/images/google-play.png" alt="">
+                       </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="line">
+            </div>
+
+            <div class="copyright-wrap">
+                <div class="row">
+                    <div class="col-lg-10 col-7">
+                        <span>Copyright©2020Khajaorder.com</span>
+                    </div>
+                    <div class="col-lg-2 col-5">
+                        <span>Developed by Khajaorder</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <section class="container">
+      <div class="clickable">
+        <a href="menu.html">Menu</a>
+        <a href="menu-single.html">Menu-single</a>
+        <a href="restaurant.html">Restaurants</a>
+        <a href="restro-single.html">Restaurant-single</a>
+        <a href="login.html">Login</a>
+        <a href="cart.html">Cart</a>
+        <a href="checkout.html">Checkout</a>
+        <a href="account.html">Account</a>
+        <a href="about-us.html">About Us</a>
+        <a href="guide.html">Guide</a>
+        <a href="guide1-terms.html">Guide1</a>
+        <a href="favourites.html">Favourites</a>
+        <a href="register.html">Register</a>
+        <a href="order.html">Orders</a>
+        <a href="order-process.html">Order-process</a>
+        <a href="order-track.html">Order-track</a>
+        <a href="contact.html">Contact</a>        
+      </div>
+    </section>
+
+
+
+    <script src="assets/owl.carousel.min.js"></script>
+
+    <script>
+    $('#foods').owlCarousel({
+    loop:false,
+    autoplay:true,
+    autoplayTimeout:4000,
+    responsiveClass:true,
+    rewind:true,
+    autoplayHoverPause:true,
+    margin:30,
+    nav:true,
+    responsive:{
+        0:{
+            items:2
+        },
+        576:{
+            items:2
+        },
+        768:{
+            items:4
+        },
+        1192:{
+            items:4
+        },
+        1200:{
+            items:5
+        }
+    }
+})
+</script>
+
+
+<script>
+    $('#members').owlCarousel({
+    loop:false,
+    autoplay:true,
+    autoplayTimeout:4000,
+    responsiveClass:true,
+    rewind:true,
+    autoplayHoverPause:true,
+    margin:30,
+    nav:true,
+    responsive:{
+        0:{
+            items:2
+        },
+        576:{
+            items:2
+        },
+        768:{
+            items:3
+        },
+        1192:{
+            items:4
+        },
+        1200:{
+            items:5
+        }
+    }
+})
+</script>
+
+</body>
+</html>
+

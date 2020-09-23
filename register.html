@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+      <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+ <!-- Also include jQueryUI -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!--fontawasome-->
+<script src="https://kit.fontawesome.com/2d4e532760.js"></script>
+<script>
+    console.log("hello");
+        function openMenu()
+        {
+           document.getElementById('navLinks').style.left="0px";
+        }
+        
+        function closeMenu()
+        {
+           document.getElementById('navLinks').style.left = "-300px";
+        }
+    </script>
+</head>
+<body>
+
+    <header class="header-wrapper">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-1 col-7">
+                    <a href="index.html" class="logo-container">
+                        <img src="assets/images/logo.png" alt="assets/images/logo.png">
+                    </a>
+                </div>
+
+
+                <div class="col-lg-5 col-1">
+                    
+                    <script>
+                        function searchbtn()
+                        {
+                          document.getElementById('search_id').style.display="block";
+                        }
+                        function closebtn()
+                        {
+                          document.getElementById('search_id').style.display="none";
+                        }
+                      </script>
+
+                      <div class="mbl-search">
+                        <button  onclick="searchbtn()" class="sm-btn">
+                            <span><i class="fas fa-search"></i></span>
+                        </button>
+                        
+                        <div class="sm-search"  id="search_id">
+                            <input type="search" placeholder="Search..." />
+                            <button onclick="closebtn()" class="cross_icon"><i class="fas fa-times"></i></button>
+                        </div>
+                      </div>
+
+                    <div class="s-form">
+                        <form action="">
+                            <input class="input-box" type="text" name="search" placeholder="Search food and restaurants">
+                            
+                                <button class="find button-container">
+                                    <span><i class="fas fa-search"></i>Search</span>
+                                </button>
+                            
+                        </form>
+                    </div>
+                </div>
+    
+                <div class="col-lg-3 col-2">
+                    <div class="nav-wrapper">
+                        <nav class="navbar navbar-expand-sm">
+                            <button onclick="openMenu()" class="menu-icon"><i class="fas fa-bars" aria-hidden="true"></i></button>
+                            <ul class="navbar-nav menu-items" id="navLinks">
+                                <li><button onclick="closeMenu()" class="cross-icon"><i class="fas fa-times" aria-hidden="true"></i></button></li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="menu.html">Menu</a>
+                              </li>
+                              <li class="nav-item active">
+                                <a class="nav-link" href="restaurant.html">Restaurants</a>
+                              </li>
+                            </ul>
+                          
+                          </nav>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-2">
+                   <div class="logs">
+                    <a href="register.html"><button class="sign button-container">
+                        <span><i class="fas fa-lock"></i></span>
+                    </button></a>
+                
+                   </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <section class="login-wrapper">
+        <div class="container">
+           <div class="login-wrap">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="login-img-container img-cotainer">
+                        <img class="crop" src="assets/images/login-image.png" alt="assets/images/login-image.png">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="form-wrapper">
+                        <div class="register-btns">
+                          
+                            <a href="login.html"><button class="sm-button">
+                                <span>Login</span>
+                            </button></a>
+
+                            <a href="register.html"><button class="login button-container">
+                                <span>Register</span>
+                            </button></a>
+
+                        </div>
+
+                      <div class="form-wrap">
+                        <form  action="">
+                            <h3 class="title">Welcome</h3>
+                            <small>Please register your account</small>
+                            <div class="form-group">
+                                <label for="">Username</label>
+                                <input type="text" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Email id</label>
+                                <input type="varchar" name="password">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Password</label>
+                                <input type="text" name="email">
+                            </div>
+                            <div class="form-group">
+                                <label for="">Confirm Password</label>
+                                <input type="varchar" name="password">
+                            </div>
+
+                            <button class="submit button-container">
+                                <span>Ok</span>
+                            </button>
+                        </form>
+                      </div>
+
+
+                      <div class="privacy text-center">
+                          <a href="#"><span>Privacy and Terms & Conditions</span></a>
+                      </div>
+
+                    </div>
+                </div>
+            </div>
+           </div>
+        </div>
+    </section>
+    
+
+
+   
+    <footer class="footer-wrapper margin-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-7">
+                    <div class="logo-container">
+                        <img src="assets/images/logo.png" alt="assets/images/logo.png">
+                        <span class="logo-name">KhajaOrder</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-5">
+                    <div class="medias">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>                   
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>   
+                    </div>
+                </div>
+            </div>
+
+            <div class="line">
+            </div>
+
+            <div class="foot-wrap">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="details">
+                            <p class="sm-para">Restaurant, or an eatery, is a business that prepares and serves food and drinks to customers.Meals are generally served and eaten on the premises, but many restaurants also offer take-out and food delivery services. Restaurants vary greatly in appearance and offerings</p>
+                            <b>Service Time:5A.M-12P.M</b>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                       <div class="quick-links">
+                        <h5>Quick Links</h5>
+                        <a class="active" href="menu.html">Menu</a>
+                        <a href="restaurant.html">Restaurants</a>
+                        <a href="#">Contact Us</a>
+                        <a href="about-us.html">About Us</a>
+                       </div>
+                    </div>
+                    <div class="col-lg-3">
+                      <div class="guide">
+                        <h5>Guide</h5>
+                        <a href="#">How to order?</a>
+                        <a href="#">How to get notified on offers?</a>
+                        <a href="#">Payment gateways</a>
+                        <a href="#">Payment gateways</a>
+                        <a href="#">Add Restaurant</a>
+                      </div>
+                    </div>
+                    <div class="col-lg-3">
+                       <div class="apps">
+                        <h5>Download app</h5>
+                        <img class="crop" src="assets/images/app-store.png" alt="">
+                        <img class="crop" src="assets/images/google-play.png" alt="">
+                       </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="line">
+            </div>
+
+            <div class="copyright-wrap">
+                <div class="row">
+                    <div class="col-lg-10 col-7">
+                        <span>Copyright©2020Khajaorder.com</span>
+                    </div>
+                    <div class="col-lg-2 col-5">
+                        <span>Developed by Khajaorder</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
